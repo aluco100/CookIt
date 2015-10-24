@@ -22,8 +22,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             println(i.getTitle())
         }
         tableview.delegate = self
-        tableview.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableview.dataSource = self
         tableview.reloadData()
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -38,9 +39,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableview.dequeueReusableCellWithIdentifier("BasicCell", forIndexPath: indexPath) as! recipeCell
-    let entry = recipes[indexPath.row]
-    let image = UIImage(named: recipes[indexPath.row].getThumb())
+    let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell", forIndexPath: indexPath) as! recipeCell
+    let url = NSURL(string: recipes[indexPath.row].getThumb())
+    let Data = NSData(contentsOfURL: url!)
+    let image = UIImage(data: Data!)
     cell.photoRecipe.image = image
     cell.titleRecipe.text = recipes[indexPath.row].getTitle()
     return cell
