@@ -16,6 +16,7 @@
 		0C88F2CC1BDBEFEC00A5AB81 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */; };
 		0C88F2CE1BDBF3C700A5AB81 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */; };
 		0C88F2D01BDC20C000A5AB81 /* recipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */; };
+		0C88F2D41BDC63D200A5AB81 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2D31BDC63D200A5AB81 /* RecipeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recipeCell.swift; sourceTree = "<group>"; };
+		0C88F2D31BDC63D200A5AB81 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				0C3E13841B18AA3500CD98CD /* AppDelegate.swift */,
 				0C3E13861B18AA3500CD98CD /* ViewController.swift */,
 				0C3E13881B18AA3500CD98CD /* Main.storyboard */,
+				0C88F2D31BDC63D200A5AB81 /* RecipeDetailViewController.swift */,
 				0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */,
 				0C3E138B1B18AA3500CD98CD /* Images.xcassets */,
 				0C3E138D1B18AA3500CD98CD /* LaunchScreen.xib */,
@@ -225,6 +228,7 @@
 				0C88F2D01BDC20C000A5AB81 /* recipeCell.swift in Sources */,
 				0C88F2CC1BDBEFEC00A5AB81 /* Provider.swift in Sources */,
 				0C3E13851B18AA3500CD98CD /* AppDelegate.swift in Sources */,
+				0C88F2D41BDC63D200A5AB81 /* RecipeDetailViewController.swift in Sources */,
 				0C88F2CE1BDBF3C700A5AB81 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

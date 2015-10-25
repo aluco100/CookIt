@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var recipes:[Recipe] = []
+    var recipeTitle:String = ""
     @IBOutlet weak var tableview: UITableView!
 
     
@@ -45,9 +46,21 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     let image = UIImage(data: Data!)
     cell.photoRecipe.image = image
     cell.titleRecipe.text = recipes[indexPath.row].getTitle()
+    recipeTitle = cell.titleRecipe.text!
     return cell
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "recipeDetail"){
+            let indexPath: NSIndexPath = self.tableview.indexPathForSelectedRow()!;
+            let destination: RecipeDetailViewController = segue.destinationViewController as! RecipeDetailViewController
+            destination.currentTitle = recipes[indexPath.row].getTitle()
+            destination.currentImage = recipes[indexPath.row].getThumb()
+            destination.currentIngredients = recipes[indexPath.row].getIngredients()
+            destination.currentURL = recipes[indexPath.row].getHref()
+            
+        }
+    }
 
 }
 
