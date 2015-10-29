@@ -13,6 +13,10 @@
 		0C3E138C1B18AA3500CD98CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3E138B1B18AA3500CD98CD /* Images.xcassets */; };
 		0C3E138F1B18AA3500CD98CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3E138D1B18AA3500CD98CD /* LaunchScreen.xib */; };
 		0C3E139B1B18AA3500CD98CD /* CookItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E139A1B18AA3500CD98CD /* CookItTests.swift */; };
+		0C5463F11BE2D7960004EE7D /* chef.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C5463EE1BE2D7960004EE7D /* chef.png */; };
+		0C5463F21BE2D7960004EE7D /* dish.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C5463EF1BE2D7960004EE7D /* dish.png */; };
+		0C5463F31BE2D7960004EE7D /* ingredients.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C5463F01BE2D7960004EE7D /* ingredients.png */; };
+		0C5463FF1BE2DA3C0004EE7D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5463FE1BE2DA3C0004EE7D /* SWRevealViewController.m */; };
 		0C88F2CC1BDBEFEC00A5AB81 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */; };
 		0C88F2CE1BDBF3C700A5AB81 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */; };
 		0C88F2D01BDC20C000A5AB81 /* recipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */; };
@@ -40,6 +44,12 @@
 		0C3E13941B18AA3500CD98CD /* CookItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3E13991B18AA3500CD98CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3E139A1B18AA3500CD98CD /* CookItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookItTests.swift; sourceTree = "<group>"; };
+		0C5463EE1BE2D7960004EE7D /* chef.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chef.png; path = Images/chef.png; sourceTree = SOURCE_ROOT; };
+		0C5463EF1BE2D7960004EE7D /* dish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dish.png; path = Images/dish.png; sourceTree = SOURCE_ROOT; };
+		0C5463F01BE2D7960004EE7D /* ingredients.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ingredients.png; path = Images/ingredients.png; sourceTree = SOURCE_ROOT; };
+		0C5463FC1BE2DA3B0004EE7D /* CookIt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CookIt-Bridging-Header.h"; sourceTree = "<group>"; };
+		0C5463FD1BE2DA3C0004EE7D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
+		0C5463FE1BE2DA3C0004EE7D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recipeCell.swift; sourceTree = "<group>"; };
@@ -85,6 +95,8 @@
 		0C3E13811B18AA3500CD98CD /* CookIt */ = {
 			isa = PBXGroup;
 			children = (
+				0C5463FD1BE2DA3C0004EE7D /* SWRevealViewController.h */,
+				0C5463FE1BE2DA3C0004EE7D /* SWRevealViewController.m */,
 				0C3E13841B18AA3500CD98CD /* AppDelegate.swift */,
 				0C3E13861B18AA3500CD98CD /* ViewController.swift */,
 				0C3E13881B18AA3500CD98CD /* Main.storyboard */,
@@ -95,6 +107,7 @@
 				0C3E138B1B18AA3500CD98CD /* Images.xcassets */,
 				0C3E138D1B18AA3500CD98CD /* LaunchScreen.xib */,
 				0C3E13821B18AA3500CD98CD /* Supporting Files */,
+				0C5463FC1BE2DA3B0004EE7D /* CookIt-Bridging-Header.h */,
 			);
 			path = CookIt;
 			sourceTree = "<group>";
@@ -102,6 +115,9 @@
 		0C3E13821B18AA3500CD98CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C5463EE1BE2D7960004EE7D /* chef.png */,
+				0C5463EF1BE2D7960004EE7D /* dish.png */,
+				0C5463F01BE2D7960004EE7D /* ingredients.png */,
 				0C3E13831B18AA3500CD98CD /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -204,7 +220,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5463F31BE2D7960004EE7D /* ingredients.png in Resources */,
 				0C3E138A1B18AA3500CD98CD /* Main.storyboard in Resources */,
+				0C5463F21BE2D7960004EE7D /* dish.png in Resources */,
+				0C5463F11BE2D7960004EE7D /* chef.png in Resources */,
 				0C3E138F1B18AA3500CD98CD /* LaunchScreen.xib in Resources */,
 				0C3E138C1B18AA3500CD98CD /* Images.xcassets in Resources */,
 			);
@@ -224,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5463FF1BE2DA3C0004EE7D /* SWRevealViewController.m in Sources */,
 				0C3E13871B18AA3500CD98CD /* ViewController.swift in Sources */,
 				0C88F2D01BDC20C000A5AB81 /* recipeCell.swift in Sources */,
 				0C88F2CC1BDBEFEC00A5AB81 /* Provider.swift in Sources */,
@@ -358,9 +378,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CookIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CookIt/CookIt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -368,9 +391,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CookIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CookIt/CookIt-Bridging-Header.h";
 			};
 			name = Release;
 		};

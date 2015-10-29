@@ -13,6 +13,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     var recipeTitle:String = ""
     @IBOutlet weak var tableview: UITableView!
 
+    @IBOutlet weak var MenuButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         tableview.dataSource = self
         tableview.reloadData()
         
+        
+        if(self.revealViewController() != nil){
+            MenuButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: UIControlEvents.TouchUpInside)
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
         // Do any additional setup after loading the view, typically from a nib.
     }

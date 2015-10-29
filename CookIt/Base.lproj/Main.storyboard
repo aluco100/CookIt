@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WeW-wU-pgt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kYT-x2-2pp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -21,6 +21,28 @@
             </objects>
             <point key="canvasLocation" x="-1016" y="12"/>
         </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="DYM-AP-BZF">
+            <objects>
+                <viewController id="kYT-x2-2pp" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FXn-Qc-YIn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sut-nm-Kdr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6BA-O4-Ol3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="WeW-wU-pgt" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="c7s-1r-Zfo"/>
+                        <segue destination="cVB-Iz-TTm" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="AQ8-53-ccm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIG-Nu-drb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2817" y="576"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="zfp-o1-a9u">
             <objects>
@@ -30,12 +52,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="i6h-jR-RBH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recetas" rowHeight="90" id="i6h-jR-RBH">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i6h-jR-RBH" id="9u6-az-1qc">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SQc-DX-nNi">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chef.png" translatesAutoresizingMaskIntoConstraints="NO" id="SQc-DX-nNi">
                                             <rect key="frame" x="52" y="11" width="84" height="67"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="67" id="2qy-UD-qFG"/>
@@ -59,8 +81,11 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="JvJ-tj-1Fz" secondAttribute="bottom" constant="3" id="x1q-yb-6A9"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="WeW-wU-pgt" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="yRN-tR-j8z"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="G62-rV-by6">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientes" rowHeight="90" id="G62-rV-by6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G62-rV-by6" id="iSi-r8-Ofs">
@@ -72,7 +97,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edA-Yt-7iA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ingredients.png" translatesAutoresizingMaskIntoConstraints="NO" id="edA-Yt-7iA">
                                             <rect key="frame" x="52" y="8" width="84" height="67"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="84" id="bOY-NH-Xnm"/>
@@ -91,13 +116,13 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="5Hz-Mw-ueF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categorias" rowHeight="90" id="5Hz-Mw-ueF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Hz-Mw-ueF" id="dWM-cy-XTq">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-Ow-KtN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dish.png" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-Ow-KtN">
                                             <rect key="frame" x="54" y="8" width="84" height="67"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="84" id="2ME-JE-2ba"/>
@@ -131,7 +156,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7r-6u-XYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1696" y="736"/>
+            <point key="canvasLocation" x="-1783" y="670"/>
         </scene>
         <!--Recipes-->
         <scene sceneID="tne-QT-ifu">
@@ -198,8 +223,20 @@
                             <constraint firstAttribute="centerY" secondItem="JdI-FC-lcM" secondAttribute="centerY" constant="44.5" id="duu-AM-Yzh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recipes" id="kkR-uK-XuZ"/>
+                    <navigationItem key="navigationItem" title="Recipes" id="kkR-uK-XuZ">
+                        <barButtonItem key="leftBarButtonItem" id="tik-Ul-Eda">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PSs-LS-uwe">
+                                <rect key="frame" x="16" y="7" width="133" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="≣">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="MenuButton" destination="PSs-LS-uwe" id="6zL-yt-6J8"/>
                         <outlet property="tableview" destination="JdI-FC-lcM" id="m2T-Ef-RfM"/>
                     </connections>
                 </viewController>
@@ -307,4 +344,12 @@
             <point key="canvasLocation" x="502" y="12"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chef.png" width="300" height="300"/>
+        <image name="dish.png" width="640" height="425"/>
+        <image name="ingredients.png" width="522" height="582"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yRN-tR-j8z"/>
+    </inferredMetricsTieBreakers>
 </document>
