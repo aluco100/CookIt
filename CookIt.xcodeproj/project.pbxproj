@@ -89,12 +89,12 @@
 				0C3E13861B18AA3500CD98CD /* ViewController.swift */,
 				0C3E13881B18AA3500CD98CD /* Main.storyboard */,
 				0C88F2D31BDC63D200A5AB81 /* RecipeDetailViewController.swift */,
+				0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */,
+				0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */,
 				0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */,
 				0C3E138B1B18AA3500CD98CD /* Images.xcassets */,
 				0C3E138D1B18AA3500CD98CD /* LaunchScreen.xib */,
 				0C3E13821B18AA3500CD98CD /* Supporting Files */,
-				0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */,
-				0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */,
 			);
 			path = CookIt;
 			sourceTree = "<group>";

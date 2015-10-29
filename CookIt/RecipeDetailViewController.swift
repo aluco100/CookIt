@@ -10,7 +10,6 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
-    @IBOutlet weak var recipeURL: UILabel!
     @IBOutlet weak var recipeTitle: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeIngredients: UITextView!
@@ -33,12 +32,12 @@ class RecipeDetailViewController: UIViewController {
         //ingredientes
         recipeIngredients.text = currentIngredients
         
-        //url
-        recipeURL.text = currentURL
-
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func openLink(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: currentURL)!)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
