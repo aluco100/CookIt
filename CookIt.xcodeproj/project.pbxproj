@@ -18,6 +18,9 @@
 		0C5463F31BE2D7960004EE7D /* ingredients.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C5463F01BE2D7960004EE7D /* ingredients.png */; };
 		0C5463FF1BE2DA3C0004EE7D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5463FE1BE2DA3C0004EE7D /* SWRevealViewController.m */; };
 		0C5464011BE2E6A90004EE7D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5464001BE2E6A90004EE7D /* MenuViewController.swift */; };
+		0C81CBEE1BE538F600228CFC /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81CBED1BE538F500228CFC /* Ingredient.swift */; };
+		0C81CBF01BE539A900228CFC /* IngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81CBEF1BE539A900228CFC /* IngredientViewController.swift */; };
+		0C81CBF21BE53CD400228CFC /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81CBF11BE53CD400228CFC /* AddViewController.swift */; };
 		0C88F2CC1BDBEFEC00A5AB81 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */; };
 		0C88F2CE1BDBF3C700A5AB81 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */; };
 		0C88F2D01BDC20C000A5AB81 /* recipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */; };
@@ -52,6 +55,9 @@
 		0C5463FD1BE2DA3C0004EE7D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		0C5463FE1BE2DA3C0004EE7D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		0C5464001BE2E6A90004EE7D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0C81CBED1BE538F500228CFC /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		0C81CBEF1BE539A900228CFC /* IngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientViewController.swift; sourceTree = "<group>"; };
+		0C81CBF11BE53CD400228CFC /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recipeCell.swift; sourceTree = "<group>"; };
@@ -102,9 +108,12 @@
 				0C3E13841B18AA3500CD98CD /* AppDelegate.swift */,
 				0C3E13861B18AA3500CD98CD /* ViewController.swift */,
 				0C3E13881B18AA3500CD98CD /* Main.storyboard */,
+				0C81CBF11BE53CD400228CFC /* AddViewController.swift */,
+				0C81CBEF1BE539A900228CFC /* IngredientViewController.swift */,
 				0C5464001BE2E6A90004EE7D /* MenuViewController.swift */,
 				0C88F2D31BDC63D200A5AB81 /* RecipeDetailViewController.swift */,
 				0C88F2CB1BDBEFEC00A5AB81 /* Provider.swift */,
+				0C81CBED1BE538F500228CFC /* Ingredient.swift */,
 				0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */,
 				0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */,
 				0C3E138B1B18AA3500CD98CD /* Images.xcassets */,
@@ -250,6 +259,9 @@
 			files = (
 				0C5463FF1BE2DA3C0004EE7D /* SWRevealViewController.m in Sources */,
 				0C3E13871B18AA3500CD98CD /* ViewController.swift in Sources */,
+				0C81CBEE1BE538F600228CFC /* Ingredient.swift in Sources */,
+				0C81CBF21BE53CD400228CFC /* AddViewController.swift in Sources */,
+				0C81CBF01BE539A900228CFC /* IngredientViewController.swift in Sources */,
 				0C88F2D01BDC20C000A5AB81 /* recipeCell.swift in Sources */,
 				0C88F2CC1BDBEFEC00A5AB81 /* Provider.swift in Sources */,
 				0C3E13851B18AA3500CD98CD /* AppDelegate.swift in Sources */,

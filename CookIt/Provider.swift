@@ -24,7 +24,6 @@ class Provider {
     }
     
     private func parseJSON(inputData: NSData) -> NSDictionary{
-        var error: NSError?
         let boardsDictionary: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
         
         return boardsDictionary

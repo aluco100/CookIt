@@ -48,6 +48,17 @@ class MenuViewController: UITableViewController {
         return cell
     }
     
+    override func encodeRestorableStateWithCoder(coder: NSCoder) {
+        super.encodeRestorableStateWithCoder(coder)
+    }
+    
+    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+        super.decodeRestorableStateWithCoder(coder)
+    }
+    
+    override func applicationFinishedRestoringState() {
+        
+    }
     
 
 }
