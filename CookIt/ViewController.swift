@@ -21,7 +21,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         let prov: Provider = Provider(url: Url)
         recipes = prov.parseRecipes()
         for i in recipes{
-            println(i.getTitle())
+            print(i.getTitle())
         }
         tableview.delegate = self
         tableview.dataSource = self
@@ -58,7 +58,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "recipeDetail"){
-            let indexPath: NSIndexPath = self.tableview.indexPathForSelectedRow()!;
+            let indexPath: NSIndexPath = self.tableview.indexPathForSelectedRow!;
             let destination: RecipeDetailViewController = segue.destinationViewController as! RecipeDetailViewController
             destination.currentTitle = recipes[indexPath.row].getTitle()
             destination.currentImage = recipes[indexPath.row].getThumb()
