@@ -10,9 +10,14 @@ import UIKit
 
 class AddViewController: UIViewController {
 
+    var popover: UIPopoverController? = nil
+    var navC: UINavigationController? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let native:IngredientViewController = IngredientViewController()
+        navC = UINavigationController(rootViewController: native)
+        popover = UIPopoverController(contentViewController: navC!)
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +26,10 @@ class AddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func dismissButton(sender: AnyObject) {
+        popover?.dismissPopoverAnimated(true)
+        self.popover = nil
+    }
 
     /*
     // MARK: - Navigation
@@ -31,5 +40,7 @@ class AddViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

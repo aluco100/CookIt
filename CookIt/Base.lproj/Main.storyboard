@@ -305,7 +305,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="addIngredient:" destination="cYS-RQ-OrW" eventType="touchUpInside" id="eUk-9W-tHZ"/>
+                                    <segue destination="ahh-B9-N5P" kind="popoverPresentation" popoverAnchorView="4uM-Yh-qmD" id="lnY-Ru-Mq6">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -372,6 +374,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Agregar"/>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qmu-I8-4Hn">
+                                <rect key="frame" x="0.0" y="-6" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Agregar Ingrediente" id="VTA-cp-lnO">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="yIi-j1-Uy8">
+                                            <connections>
+                                                <action selector="dismissButton:" destination="ahh-B9-N5P" id="7qs-zA-K9H"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
