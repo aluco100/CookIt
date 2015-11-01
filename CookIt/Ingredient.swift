@@ -25,4 +25,14 @@ class Ingredient {
     internal func getCategory()->String{
         return self.Category
     }
+    
+    //functions setter
+    
+    internal func setName(newName: String){
+        self.Name = newName
+    }
+    
+    internal func setCategory(newCategory: String){
+        self.Category = newCategory
+    }
 }

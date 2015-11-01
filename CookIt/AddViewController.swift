@@ -9,15 +9,24 @@
 import UIKit
 
 class AddViewController: UIViewController {
+    
+    //outlets
+    
+    @IBOutlet weak var Ingrediente: UITextField!
+    @IBOutlet weak var Categoria: UITextField!
+    
 
     var popover: UIPopoverController? = nil
     var navC: UINavigationController? = nil
+    var ingrediente_nuevo: Ingredient = Ingredient(name: "", category: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let native:IngredientViewController = IngredientViewController()
-        navC = UINavigationController(rootViewController: native)
-        popover = UIPopoverController(contentViewController: navC!)
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad){
+            let native:IngredientViewController = IngredientViewController()
+            navC = UINavigationController(rootViewController: native)
+            popover = UIPopoverController(contentViewController: navC!)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -27,20 +36,26 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func dismissButton(sender: AnyObject) {
-        popover?.dismissPopoverAnimated(true)
-        self.popover = nil
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad){
+            popover?.dismissPopoverAnimated(true)
+            self.popover = nil
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }else{
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func Agregar(sender: AnyObject) {
+        let name: String = Ingrediente.text!
+        let category: String = Categoria.text!
+        
+        ingrediente_nuevo.setName(name)
+        ingrediente_nuevo.setCategory(category)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
-    */
-    
+        
     
 
 }
