@@ -25,6 +25,8 @@
 		0C88F2CE1BDBF3C700A5AB81 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */; };
 		0C88F2D01BDC20C000A5AB81 /* recipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */; };
 		0C88F2D41BDC63D200A5AB81 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88F2D31BDC63D200A5AB81 /* RecipeDetailViewController.swift */; };
+		0CACEBC41BE6AA910016D626 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACEBC31BE6AA910016D626 /* CategoryViewController.swift */; };
+		0CACEBC61BE6AE660016D626 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACEBC51BE6AE660016D626 /* CategoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recipeCell.swift; sourceTree = "<group>"; };
 		0C88F2D31BDC63D200A5AB81 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		0CACEBC31BE6AA910016D626 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		0CACEBC51BE6AE660016D626 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				0C3E13841B18AA3500CD98CD /* AppDelegate.swift */,
 				0C3E13861B18AA3500CD98CD /* ViewController.swift */,
 				0C3E13881B18AA3500CD98CD /* Main.storyboard */,
+				0CACEBC31BE6AA910016D626 /* CategoryViewController.swift */,
 				0C81CBF11BE53CD400228CFC /* AddViewController.swift */,
 				0C81CBEF1BE539A900228CFC /* IngredientViewController.swift */,
 				0C5464001BE2E6A90004EE7D /* MenuViewController.swift */,
@@ -116,6 +121,7 @@
 				0C81CBED1BE538F500228CFC /* Ingredient.swift */,
 				0C88F2CD1BDBF3C700A5AB81 /* Recipe.swift */,
 				0C88F2CF1BDC20BF00A5AB81 /* recipeCell.swift */,
+				0CACEBC51BE6AE660016D626 /* CategoryCell.swift */,
 				0C3E138B1B18AA3500CD98CD /* Images.xcassets */,
 				0C3E138D1B18AA3500CD98CD /* LaunchScreen.xib */,
 				0C3E13821B18AA3500CD98CD /* Supporting Files */,
@@ -257,10 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CACEBC61BE6AE660016D626 /* CategoryCell.swift in Sources */,
 				0C5463FF1BE2DA3C0004EE7D /* SWRevealViewController.m in Sources */,
 				0C3E13871B18AA3500CD98CD /* ViewController.swift in Sources */,
 				0C81CBEE1BE538F600228CFC /* Ingredient.swift in Sources */,
 				0C81CBF21BE53CD400228CFC /* AddViewController.swift in Sources */,
+				0CACEBC41BE6AA910016D626 /* CategoryViewController.swift in Sources */,
 				0C81CBF01BE539A900228CFC /* IngredientViewController.swift in Sources */,
 				0C88F2D01BDC20C000A5AB81 /* recipeCell.swift in Sources */,
 				0C88F2CC1BDBEFEC00A5AB81 /* Provider.swift in Sources */,
