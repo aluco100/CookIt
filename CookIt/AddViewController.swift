@@ -45,17 +45,21 @@ class AddViewController: UIViewController {
         }
     }
 
-    @IBAction func Agregar(sender: AnyObject) {
-        let name: String = Ingrediente.text!
-        let category: String = Categoria.text!
-        
-        ingrediente_nuevo.setName(name)
-        ingrediente_nuevo.setCategory(category)
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "goBack Unwind Segue"){
+            let unwindToMVC = segue.destinationViewController as! IngredientViewController
+            
+            let name: String = Ingrediente.text!
+            let category: String = Categoria.text!
+            
+            ingrediente_nuevo.setName(name)
+            ingrediente_nuevo.setCategory(category)
+            
+            unwindToMVC.aux = ingrediente_nuevo
+            
+        }
     }
-        
+    
     
 
 }

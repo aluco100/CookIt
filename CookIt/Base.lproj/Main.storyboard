@@ -167,6 +167,9 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="mcb-sG-XiQ" secondAttribute="bottom" constant="6" id="nw2-cI-12S"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xo2-m9-DGp" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="yfX-iX-zAr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -321,6 +324,41 @@
             </objects>
             <point key="canvasLocation" x="-353" y="666"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pBH-Jn-40M">
+            <objects>
+                <navigationController id="xo2-m9-DGp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i4o-cJ-9LI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pbd-gM-pjm" kind="relationship" relationship="rootViewController" id="iVu-bK-6XY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dBk-tn-SvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1063" y="1395"/>
+        </scene>
+        <!--Categorias-->
+        <scene sceneID="sRB-IF-GsF">
+            <objects>
+                <viewController id="pbd-gM-pjm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lEu-XJ-b0u"/>
+                        <viewControllerLayoutGuide type="bottom" id="HE4-f9-9Gr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gbU-vV-P9e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Categorias" id="oJF-0I-f2o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHL-du-Id5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263" y="1395"/>
+        </scene>
         <!--Add View Controller-->
         <scene sceneID="ML0-hc-Wby">
             <objects>
@@ -366,7 +404,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Agregar"/>
                                 <connections>
-                                    <action selector="Agregar:" destination="ahh-B9-N5P" eventType="touchUpInside" id="lWq-Cq-4qq"/>
+                                    <segue destination="fzW-nY-I2P" kind="unwind" identifier="goBack Unwind Segue" unwindAction="goBack:" id="YbO-Hx-dnZ"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmu-I8-4Hn">
@@ -426,6 +464,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVU-UJ-cIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fzW-nY-I2P" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="355" y="670"/>
         </scene>
