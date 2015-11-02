@@ -377,29 +377,18 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="❌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tes-jr-TCp">
-                                                    <rect key="frame" x="470" y="6" width="35" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="IeO-o1-hy6"/>
-                                                        <constraint firstAttribute="width" constant="22" id="mdf-DB-JiL"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abE-zQ-ydh">
+                                                    <rect key="frame" x="454" y="7" width="51" height="31"/>
+                                                </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="abE-zQ-ydh" firstAttribute="bottom" secondItem="pFV-5Z-zdb" secondAttribute="bottom" id="0fd-Cd-Sha"/>
                                                 <constraint firstItem="pFV-5Z-zdb" firstAttribute="leading" secondItem="jh2-EC-S6y" secondAttribute="leadingMargin" id="46F-sb-3hd"/>
                                                 <constraint firstItem="pFV-5Z-zdb" firstAttribute="bottom" secondItem="jh2-EC-S6y" secondAttribute="bottomMargin" id="4LO-Hf-vDP"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Tes-jr-TCp" secondAttribute="trailing" constant="94" id="8e5-3m-Kjz"/>
-                                                <constraint firstItem="Tes-jr-TCp" firstAttribute="centerY" secondItem="jh2-EC-S6y" secondAttribute="centerY" id="9fP-QJ-yDf"/>
-                                                <constraint firstItem="Tes-jr-TCp" firstAttribute="top" secondItem="jh2-EC-S6y" secondAttribute="topMargin" constant="4" id="EKF-eY-lR4"/>
-                                                <constraint firstAttribute="trailing" secondItem="Tes-jr-TCp" secondAttribute="trailing" constant="102" id="at4-l6-zFg"/>
+                                                <constraint firstItem="abE-zQ-ydh" firstAttribute="leading" secondItem="pFV-5Z-zdb" secondAttribute="trailing" constant="16" id="FcV-er-6Z7"/>
                                                 <constraint firstItem="pFV-5Z-zdb" firstAttribute="top" secondItem="jh2-EC-S6y" secondAttribute="topMargin" constant="4" id="dA3-iT-flW"/>
-                                                <constraint firstItem="Tes-jr-TCp" firstAttribute="leading" secondItem="pFV-5Z-zdb" secondAttribute="trailing" constant="38" id="rlA-tY-c3v"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Tes-jr-TCp" secondAttribute="bottom" constant="5" id="siW-O4-seJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="abE-zQ-ydh" secondAttribute="trailing" constant="89" id="hIM-xX-7jZ"/>
                                                 <constraint firstItem="pFV-5Z-zdb" firstAttribute="leading" secondItem="jh2-EC-S6y" secondAttribute="leadingMargin" id="vZw-o5-Y2K"/>
-                                                <constraint firstItem="Tes-jr-TCp" firstAttribute="centerY" secondItem="pFV-5Z-zdb" secondAttribute="centerY" constant="-0.5" id="xVw-DY-iRS"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -409,7 +398,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="icon" destination="Tes-jr-TCp" id="82G-3c-mQT"/>
+                                            <outlet property="seleccion" destination="abE-zQ-ydh" id="wIu-Gz-bam"/>
                                             <outlet property="titulo" destination="pFV-5Z-zdb" id="BZZ-EZ-AYY"/>
                                         </connections>
                                     </tableViewCell>

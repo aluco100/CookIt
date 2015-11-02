@@ -22,6 +22,11 @@ class IngredientViewController: UITableViewController, UIPopoverControllerDelega
         table.delegate = self
         table.reloadData()
         
+        
+        if(self.revealViewController() != nil){
+            MenuButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: UIControlEvents.TouchUpInside)
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         // Do any additional setup after loading the view.
     }
     

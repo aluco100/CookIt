@@ -13,7 +13,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var MenuButton: UIButton!
     @IBOutlet weak var table: UITableView!
     
-    var categorias : [String] = ["Dishes", "Salads", "Desserts", "Snacks", "Omelet", "Drinks"]
+    var categorias : [Category] = [Category(Name: "Dishes"), Category(Name: "Salads"), Category(Name: "Desserts"), Category(Name: "Snacks"), Category(Name: "Omelet"), Category(Name: "Drinks")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,21 +40,13 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath) as! CategoryCell
-        cell.titulo.text = categorias[indexPath.row] 
-        
+        cell.titulo.text = categorias[indexPath.row].getName()
+        cell.seleccion.setOn(categorias[indexPath.row].getSelected(), animated: false)
         return cell
     }
 
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! CategoryCell
-        if(cell.icon.text == "❌"){
-            cell.icon.text = "✔️"
-        }else{
-            cell.icon.text = "❌"
-        }
-    }
-    
+        
     override func encodeRestorableStateWithCoder(coder: NSCoder) {
         super.encodeRestorableStateWithCoder(coder)
     }

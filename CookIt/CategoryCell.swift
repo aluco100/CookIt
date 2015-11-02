@@ -11,7 +11,8 @@ import UIKit
 class CategoryCell: UITableViewCell {
     
     @IBOutlet weak var titulo: UILabel!
-    @IBOutlet weak var icon: UILabel!
+    @IBOutlet weak var seleccion: UISwitch!
+    
     
 
     override func setSelected(selected: Bool, animated: Bool) {
