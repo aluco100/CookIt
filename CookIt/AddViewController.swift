@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate {
     
     //outlets
     
@@ -27,6 +27,9 @@ class AddViewController: UIViewController {
             navC = UINavigationController(rootViewController: native)
             popover = UIPopoverController(contentViewController: navC!)
         }
+        
+        Ingrediente.delegate = self
+        Categoria.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -58,6 +61,10 @@ class AddViewController: UIViewController {
             unwindToMVC.aux = ingrediente_nuevo
             
         }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     

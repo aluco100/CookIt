@@ -40,10 +40,13 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath) as! CategoryCell
+        cell.selectionStyle = .None
         cell.titulo.text = categorias[indexPath.row].getName()
         cell.seleccion.setOn(categorias[indexPath.row].getSelected(), animated: false)
         return cell
     }
+    
+    
 
 
         
