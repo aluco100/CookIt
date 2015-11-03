@@ -12,21 +12,31 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     var recipes:[Recipe] = []
     var recipeTitle:String = ""
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
 
     @IBOutlet weak var MenuButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let Url: String = "http://www.recipepuppy.com/api/"
-        let prov: Provider = Provider(url: Url)
-        recipes = prov.parseRecipes()
-        for i in recipes{
-            print(i.getTitle())
-        }
         tableview.delegate = self
         tableview.dataSource = self
-        tableview.reloadData()
-        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),{
+            let Url: String = "http://www.recipepuppy.com/api/"
+            let prov: Provider = Provider(url: Url)
+            self.recipes = prov.parseRecipes()
+            
+            dispatch_sync(dispatch_get_main_queue(), {
+                self.tableview.reloadData()
+            })
+            })
+        if(recipes.count == 0){
+            loading.hidden = false
+            loading.startAnimating()
+            
+        }else{
+            loading.hidden = true
+            loading.stopAnimating()
+        }
         
         if(self.revealViewController() != nil){
             MenuButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -42,6 +52,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(recipes.count == 0){
+            loading.hidden = false
+            loading.startAnimating()
+            
+        }else{
+            loading.hidden = true
+            loading.stopAnimating()
+        }
+
         return recipes.count
     }
 

@@ -43,5 +43,12 @@ class RecipeDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "webSegue"){
+            let destination = segue.destinationViewController as? WebDetailViewController
+            destination?.url = currentURL
+        }
+    }
+    
 
 }

@@ -238,6 +238,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WvV-Ck-6Sv">
+                                <rect key="frame" x="270" y="270" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="MB5-Oa-Xnf"/>
+                                    <constraint firstAttribute="width" constant="60" id="axa-XL-JUC"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -245,7 +252,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="JdI-FC-lcM" secondAttribute="trailing" id="FtQ-FR-7Bb"/>
                             <constraint firstItem="JdI-FC-lcM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-44" id="KEb-SX-EJK"/>
                             <constraint firstItem="JdI-FC-lcM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="O65-tE-AAx"/>
+                            <constraint firstItem="WvV-Ck-6Sv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X7I-sO-Nbs"/>
                             <constraint firstAttribute="centerY" secondItem="JdI-FC-lcM" secondAttribute="centerY" constant="44.5" id="duu-AM-Yzh"/>
+                            <constraint firstItem="WvV-Ck-6Sv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jBm-xd-ZtW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recipes" id="kkR-uK-XuZ">
@@ -262,6 +271,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="MenuButton" destination="PSs-LS-uwe" id="6zL-yt-6J8"/>
+                        <outlet property="loading" destination="WvV-Ck-6Sv" id="PrJ-u1-Ehw"/>
                         <outlet property="tableview" destination="JdI-FC-lcM" id="m2T-Ef-RfM"/>
                     </connections>
                 </viewController>
@@ -616,7 +626,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="openLink:" destination="usj-VD-Aom" eventType="touchUpInside" id="faU-pi-bPc"/>
+                                    <segue destination="BE3-94-LBz" kind="show" identifier="webSegue" id="WYy-Gy-Gjx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -655,6 +665,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="veY-nO-f6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="502" y="12"/>
+        </scene>
+        <!--Web Detail View Controller-->
+        <scene sceneID="nps-6t-ym5">
+            <objects>
+                <viewController id="BE3-94-LBz" customClass="WebDetailViewController" customModule="CookIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4wO-yU-Wvq"/>
+                        <viewControllerLayoutGuide type="bottom" id="0YS-4r-WG2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vKb-Ck-PEZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBJ-mb-iJd">
+                                <rect key="frame" x="12" y="72" width="575" height="492"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nkZ-Pe-kin">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dBJ-mb-iJd" firstAttribute="leading" secondItem="vKb-Ck-PEZ" secondAttribute="leadingMargin" constant="-8" id="B0G-3D-hoB"/>
+                            <constraint firstItem="nkZ-Pe-kin" firstAttribute="centerX" secondItem="vKb-Ck-PEZ" secondAttribute="centerX" id="NLh-Zl-Vzs"/>
+                            <constraint firstItem="dBJ-mb-iJd" firstAttribute="centerY" secondItem="vKb-Ck-PEZ" secondAttribute="centerY" constant="18" id="O6G-rH-QTo"/>
+                            <constraint firstItem="dBJ-mb-iJd" firstAttribute="centerX" secondItem="vKb-Ck-PEZ" secondAttribute="centerX" id="spS-9E-gNA"/>
+                            <constraint firstItem="dBJ-mb-iJd" firstAttribute="top" secondItem="4wO-yU-Wvq" secondAttribute="bottom" constant="8" symbolic="YES" id="tzC-qK-esU"/>
+                            <constraint firstItem="nkZ-Pe-kin" firstAttribute="centerY" secondItem="vKb-Ck-PEZ" secondAttribute="centerY" id="uau-rI-rlv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loading" destination="nkZ-Pe-kin" id="gnK-R2-aR9"/>
+                        <outlet property="webView" destination="dBJ-mb-iJd" id="XE3-22-PyZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwv-8y-ki9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1306" y="12"/>
         </scene>
     </scenes>
     <resources>
