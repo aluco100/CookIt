@@ -22,6 +22,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "italian.jpg")!)
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad){
             let native:IngredientViewController = IngredientViewController()
             navC = UINavigationController(rootViewController: native)
@@ -66,6 +67,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    
     
     
 

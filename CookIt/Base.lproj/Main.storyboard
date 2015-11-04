@@ -88,7 +88,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="WeW-wU-pgt" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="yRN-tR-j8z"/>
+                                    <segue destination="WeW-wU-pgt" kind="custom" identifier="recipeSegue" customClass="SWRevealViewControllerSeguePushController" id="yRN-tR-j8z"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientes" rowHeight="90" id="G62-rV-by6">
@@ -132,7 +132,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="M1y-PZ-qlg" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="BLP-qe-dBn"/>
+                                    <segue destination="M1y-PZ-qlg" kind="custom" identifier="IngredientSegue" customClass="SWRevealViewControllerSeguePushController" id="BLP-qe-dBn"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categorias" rowHeight="90" id="5Hz-Mw-ueF">
@@ -168,7 +168,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xo2-m9-DGp" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="yfX-iX-zAr"/>
+                                    <segue destination="xo2-m9-DGp" kind="custom" identifier="CategorySegue" customClass="SWRevealViewControllerSeguePushController" id="yfX-iX-zAr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
