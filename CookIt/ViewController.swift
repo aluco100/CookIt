@@ -9,20 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    //variables
     var recipes:[Recipe] = []
     var recipeTitle:String = ""
+    var Url: String = "http://www.recipepuppy.com/api/"
+    
+    //outlets
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
-
     @IBOutlet weak var MenuButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
+        
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        if(userdefaults.valueForKey("Ingredients") != nil){
+            let ingr: String = userdefaults.objectForKey("Ingredients") as! String
+            self.Url = "http://www.recipepuppy.com/api/?i=\(ingr)"
+            print(ingr)
+        }
+        
+        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),{
-            let Url: String = "http://www.recipepuppy.com/api/"
-            let prov: Provider = Provider(url: Url)
+            let prov: Provider = Provider(url: self.Url)
             self.recipes = prov.parseRecipes()
             
             dispatch_sync(dispatch_get_main_queue(), {

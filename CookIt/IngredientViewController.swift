@@ -9,6 +9,7 @@
 import UIKit
 
 class IngredientViewController: UITableViewController, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate {
+    
     //outlets
     @IBOutlet weak var MenuButton: UIButton!
     @IBOutlet var table: UITableView!
@@ -17,11 +18,19 @@ class IngredientViewController: UITableViewController, UIPopoverControllerDelega
     var Ingredients: [Ingredient] = []
     var aux: Ingredient = Ingredient(name: "", category: "")
     var popOver: UIPopoverController? = nil
+    var userdefault = NSUserDefaults.standardUserDefaults()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         table.delegate = self
         table.reloadData()
         table.allowsMultipleSelection = false
+        
+        userdefault.setObject(parseIngredients(), forKey: "Ingredients")
+        if(userdefault.valueForKey("Ingredients_native") != nil){
+            Ingredients = userdefault.objectForKey("Ingredients_native") as! [Ingredient]
+        }
+        userdefault.synchronize()
         
         if(self.revealViewController() != nil){
             MenuButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -51,11 +60,33 @@ class IngredientViewController: UITableViewController, UIPopoverControllerDelega
             table.reloadData()
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "IngredientsUnwind"){
+            let menu = segue.destinationViewController as? MenuViewController
+            menu?.Ingredients = parseIngredients()
+        }
+    }
 
     @IBAction func goBack(segue: UIStoryboardSegue){
         print(aux.getName())
         Ingredients.append(aux)
+        userdefault.setObject(parseIngredients(), forKey: "Ingredients")
+        //userdefault.setObject(Ingredients, forKey: "Ingredients_native")
         table.reloadData()
+    }
+    
+    
+    func parseIngredients()-> String{
+        var commit: String = ""
+        for i in Ingredients{
+            if(i.getName() != Ingredients.last?.getName()){
+                commit += i.getName()+","
+            }else{
+                commit += i.getName()
+            }
+        }
+        return commit
     }
 
 }

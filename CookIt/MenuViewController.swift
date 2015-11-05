@@ -9,6 +9,10 @@
 import UIKit
 
 class MenuViewController: UITableViewController {
+    
+    var Ingredients: String = ""
+    var Categories: String = ""
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +56,12 @@ class MenuViewController: UITableViewController {
         super.encodeRestorableStateWithCoder(coder)
     }
     
-    override func decodeRestorableStateWithCoder(coder: NSCoder) {
-        super.decodeRestorableStateWithCoder(coder)
+        override func applicationFinishedRestoringState() {
+        
     }
     
-    override func applicationFinishedRestoringState() {
+    @IBAction func catchElements(segue: UIStoryboardSegue){
+        print(Ingredients)
         
     }
     
