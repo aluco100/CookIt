@@ -393,6 +393,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abE-zQ-ydh">
                                                     <rect key="frame" x="454" y="7" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="setStateCategory:" destination="cYd-My-2XW" eventType="valueChanged" id="drz-IS-pdg"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>

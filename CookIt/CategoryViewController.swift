@@ -20,7 +20,13 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         table.delegate = self
         table.dataSource = self
         table.reloadData()
-        
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        if(defaults.objectForKey("Categories_native") != nil){
+            let data: NSData = (defaults.objectForKey("Categories_native") as? NSData)!
+            categorias = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [Category]
+        }else{
+            saveCategories()
+        }
         if(self.revealViewController() != nil){
             MenuButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: UIControlEvents.TouchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -46,10 +52,6 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    
-
-
-        
     override func encodeRestorableStateWithCoder(coder: NSCoder) {
         super.encodeRestorableStateWithCoder(coder)
     }
@@ -59,6 +61,13 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     }
     override func applicationFinishedRestoringState() {
         
+    }
+    
+    func saveCategories(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(categorias)
+        defaults.setObject(data, forKey: "Categories_native")
+        defaults.synchronize()
     }
 
 }
