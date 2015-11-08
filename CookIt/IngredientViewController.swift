@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IngredientViewController: UITableViewController, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate {
+class IngredientViewController: UITableViewController, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate{
     
     //outlets
     @IBOutlet weak var MenuButton: UIButton!
@@ -28,7 +28,9 @@ class IngredientViewController: UITableViewController, UIPopoverControllerDelega
         
         userdefault.setObject(parseIngredients(), forKey: "Ingredients")
         if(userdefault.valueForKey("Ingredients_native") != nil){
-            Ingredients = userdefault.objectForKey("Ingredients_native") as! [Ingredient]
+            let Ingr_Native = userdefault.objectForKey("Ingredients_native") as? NSData
+            Ingredients = NSKeyedUnarchiver.unarchiveObjectWithData(Ingr_Native!)! as! [Ingredient]
+            
         }
         userdefault.synchronize()
         
@@ -72,7 +74,10 @@ class IngredientViewController: UITableViewController, UIPopoverControllerDelega
         print(aux.getName())
         Ingredients.append(aux)
         userdefault.setObject(parseIngredients(), forKey: "Ingredients")
-        //userdefault.setObject(Ingredients, forKey: "Ingredients_native")
+        let mutable = NSMutableArray(array: Ingredients)
+        let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(mutable)
+        userdefault.setObject(data, forKey: "Ingredients_native")
+        userdefault.synchronize()
         table.reloadData()
     }
     
@@ -88,5 +93,6 @@ class IngredientViewController: UITableViewController, UIPopoverControllerDelega
         }
         return commit
     }
+    
 
 }

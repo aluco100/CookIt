@@ -8,13 +8,19 @@
 
 import Foundation
 
-class Ingredient {
+class Ingredient: NSObject,NSCoding {
     private var Name: String
     private var Category: String
     
     init(name: String, category: String){
         self.Name = name
         self.Category = category
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let nombre = aDecoder.decodeObjectForKey("Ingredient_name") as? String
+        let categoria = aDecoder.decodeObjectForKey("Ingredient_category") as? String
+        self.init(name: nombre!,category: categoria!)
     }
     
     //funtions getter
@@ -35,4 +41,12 @@ class Ingredient {
     internal func setCategory(newCategory: String){
         self.Category = newCategory
     }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.Name, forKey: "Ingredient_name")
+        aCoder.encodeObject(self.Category, forKey: "Ingredient_category")
+    }
+    
+    
+    
 }
